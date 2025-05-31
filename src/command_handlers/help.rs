@@ -50,6 +50,16 @@ pub fn help_command(args: &[String]) -> Result<(), String> {
                 println!("\nExample: kill 1234");
                 println!("Example: kill my_app");
             },
+            "reload" => {
+                println!("reload - Restart running applications by PID or name");
+                println!("\nUsage: reload [PID | app name]");
+                println!("  Restarts running applications that were started with the 'start' command.");
+                println!("  If no argument is provided, all running applications will be reloaded.");
+                println!("  If an argument is provided, only the specified application will be reloaded.");
+                println!("\nExample: reload         # Reload all applications");
+                println!("Example: reload 1234    # Reload application with PID 1234");
+                println!("Example: reload my_app  # Reload application named my_app");
+            },
             _ => {
                 println!("Help for command: {}", command);
                 println!("No detailed help available for this command.");

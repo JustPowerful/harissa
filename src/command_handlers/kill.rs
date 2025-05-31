@@ -12,15 +12,10 @@ pub fn kill_command(args: &[String]) -> Result<(), String> {
         return Err("Usage: kill <PID | app name>\nExample: kill 1234\nExample: kill my_app".to_string());
     }
 
-    // Check if the first argument is a PID (all digits)
-    let is_pid = args[0].chars().all(|c| c.is_digit(10));
+    let identifier = args.join(" ");
     
-    // Use either the PID or join all arguments as the app name
-    let identifier = if is_pid {
-        args[0].clone()
-    } else {
-        args.join(" ")
-    };
+    // Check if the identifier is a PID (all digits)
+    let is_pid = identifier.chars().all(|c| c.is_digit(10));
     
     // Get the harissa directory
     let home_dir = env::var("HOME").map_err(|e| format!("Could not get HOME directory: {}", e))?;

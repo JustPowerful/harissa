@@ -6,6 +6,7 @@ use crate::command_handlers::run_command;
 use crate::command_handlers::start_command;
 use crate::command_handlers::list_command;
 use crate::command_handlers::kill_command;
+use crate::command_handlers::reload_command;
 
 pub type CommandFn = fn(&[String]) -> Result<(), String>;
 
@@ -23,6 +24,7 @@ impl CommandRegistry {
         commands.insert("start".to_string(), start_command);
         commands.insert("list".to_string(), list_command);
         commands.insert("kill".to_string(), kill_command);
+        commands.insert("reload".to_string(), reload_command);
         
         CommandRegistry { commands }
     }
