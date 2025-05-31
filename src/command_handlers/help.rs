@@ -60,6 +60,15 @@ pub fn help_command(args: &[String]) -> Result<(), String> {
                 println!("Example: reload 1234    # Reload application with PID 1234");
                 println!("Example: reload my_app  # Reload application named my_app");
             },
+            "startup" => {
+                println!("startup - Generate a startup script for auto-starting applications on system boot");
+                println!("\nUsage: startup");
+                println!("  Generates a shell script that can be used to automatically start all tracked");
+                println!("  applications when the system boots up.");
+                println!("  The script is printed to the console and can be redirected to a file.");
+                println!("  Instructions for setting up the startup script are provided when run.");
+                println!("\nExample: startup > ~/harissa_startup.sh");
+            },
             _ => {
                 println!("Help for command: {}", command);
                 println!("No detailed help available for this command.");
