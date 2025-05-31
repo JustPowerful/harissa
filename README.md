@@ -1,4 +1,6 @@
-# Harissa CLI
+<div align="center">
+  <img width="300" src="https://github.com/user-attachments/assets/610e037b-7003-4408-80da-67c9236ab915"/>
+</div>
 
 Harissa is a command-line tool for managing background processes. It allows you to start applications in the background, monitor their status, and control their lifecycle with simple commands.
 
